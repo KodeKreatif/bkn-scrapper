@@ -1,6 +1,6 @@
 {
   "name": "bkn-scrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Indonesian goverment civilian employee data scrapper",
   "main": "index.js",
   "scripts": {
@@ -10,11 +10,15 @@
     "type": "git",
     "url": "git://github.com/kodekreatif/bkn-scrapper"
   },
-  "keywords": ["bkn","indonesia","nip","pns"],
+  "keywords": [
+    "bkn",
+    "indonesia",
+    "nip",
+    "pns"
+  ],
   "author": "Mohammad Anwari <mdamt@mdamt.net>",
   "license": "MIT",
   "dependencies": {
-    "parse5": "~0.8.3",
-    "request": "~2.34.0"
+    "cheerio": "^0.17.0"
   }
 }
