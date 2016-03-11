@@ -13,17 +13,21 @@ bknScrapper.prototype.getData = function(id, cb) {
 
   request.post(URL, { form : form}, function(err, resp, body) {
     var data = {};
-    var $ = cheerio.load(body);
-    var entry = $("div.pns-row");
-    entry.each(function(i, e) {
-      var key = $(e).find(".label").text(); 
-      var value = $(e).find(".value").text(); 
-      value = value.replace(": ", "");
-      value = value.replace(/ {2,}/g, "");
-      data[key] = value;
-    });
-
-    cb(data);
+    if (body) {
+      var $ = cheerio.load(body);
+      var entry = $("div.pns-row");
+      entry.each(function(i, e) {
+        var key = $(e).find(".label").text(); 
+        var value = $(e).find(".value").text(); 
+        value = value.replace(": ", "");
+        value = value.replace(/ {2,}/g, "");
+        data[key] = value;
+      });
+  
+      cb(data);
+    } else {
+      cb(null);
+    }
   }) 
 }
 
