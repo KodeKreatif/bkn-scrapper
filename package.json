@@ -1,6 +1,6 @@
 {
   "name": "bkn-scrapper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Indonesian goverment civilian employee data scrapper",
   "main": "index.js",
   "scripts": {
