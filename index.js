@@ -13,6 +13,9 @@ bknScrapper.prototype.getData = function(id, cb) {
 
   request.post(URL, { form : form}, function(err, resp, body) {
     var data = {};
+    if (!body) {
+      return cb(null);
+    }
     var $ = cheerio.load(body);
     var entry = $("div.pns-row");
     entry.each(function(i, e) {
